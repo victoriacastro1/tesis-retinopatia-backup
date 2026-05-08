@@ -1,0 +1,38 @@
+{
+  "mode": "holdout-dataset",
+  "holdout_dataset": "messidor",
+  "datasets": [
+    "aptos_2019",
+    "eyePACS",
+    "idrid",
+    "messidor"
+  ],
+  "arch": "efficientnet_b0",
+  "img_size": 384,
+  "batch": 8,
+  "epochs": 25,
+  "lr": 0.0001,
+  "wd": 0.05,
+  "val_size": 0.15,
+  "seed": 42,
+  "balance_max": 1000,
+  "sizes": {
+    "train": 4794,
+    "val": 206
+  },
+  "device": "cuda",
+  "class_dist_train": {
+    "0": 985,
+    "1": 938,
+    "2": 954,
+    "3": 938,
+    "4": 979
+  },
+  "class_dist_val": {
+    "0": 15,
+    "1": 62,
+    "2": 46,
+    "3": 62,
+    "4": 21
+  }
+}

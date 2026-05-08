@@ -1,0 +1,37 @@
+{
+  "mode": "train-only",
+  "datasets": [
+    "aptos_2019",
+    "eyePACS",
+    "idrid",
+    "messidor"
+  ],
+  "arch": "inception_v3",
+  "img_size": 299,
+  "batch": 8,
+  "epochs": 25,
+  "lr": 0.0003,
+  "wd": 0.0001,
+  "val_size": 0.15,
+  "seed": 42,
+  "balance_max": 1000,
+  "sizes": {
+    "train": 4250,
+    "val": 750
+  },
+  "device": "cuda",
+  "class_dist_train": {
+    "0": 850,
+    "1": 850,
+    "2": 850,
+    "3": 850,
+    "4": 850
+  },
+  "class_dist_val": {
+    "0": 150,
+    "1": 150,
+    "2": 150,
+    "3": 150,
+    "4": 150
+  }
+}

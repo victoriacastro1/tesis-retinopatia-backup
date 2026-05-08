@@ -1,0 +1,50 @@
+# Python / notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Environments and local metadata
+.env
+.venv/
+venv/
+env/
+.DS_Store
+Thumbs.db
+
+# Raw image files and large media
+*.png
+*.jpg
+*.jpeg
+*.JPG
+*.JPEG
+*.tif
+*.tiff
+*.bmp
+*.webp
+*.avi
+*.mp4
+*.mov
+
+# Model checkpoints and serialized models
+*.pth
+*.pt
+*.ckpt
+*.pkl
+*.pickle
+*.joblib
+
+# Cached arrays / feature caches
+*.npz
+*.npy
+cache_arrays/
+
+# Experiment tracking and transient logs
+**/_wandb_runs/
+**/wandb/
+wandb/
+*.wandb
+logs/
+
+# Temporary or local outputs
+*.tmp
+*.bak
