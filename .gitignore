@@ -1,0 +1,10 @@
+﻿.venv/
+venv_stable/
+__pycache__/
+*.pyc
+*.pkl
+.ipynb_checkpoints/
+.vscode/
+cache_arrays/
+datos_raw/
+datos_procesados/
