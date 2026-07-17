@@ -1,0 +1,35 @@
+{
+  "mode": "train-only",
+  "datasets": [
+    "aptos_2019",
+    "eyePACS",
+    "idrid"
+  ],
+  "arch": "inception_v3",
+  "img_size": 299,
+  "batch": 8,
+  "epochs": 25,
+  "lr": 0.0003,
+  "wd": 0.05,
+  "val_size": 0.15,
+  "seed": 42,
+  "balance_max": 991,
+  "sizes": {
+    "train": 4211,
+    "val": 744
+  },
+  "class_dist_train": {
+    "0": 842,
+    "1": 843,
+    "2": 842,
+    "3": 842,
+    "4": 842
+  },
+  "class_dist_val": {
+    "0": 149,
+    "1": 148,
+    "2": 149,
+    "3": 149,
+    "4": 149
+  }
+}
