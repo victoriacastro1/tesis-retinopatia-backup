@@ -1,0 +1,4 @@
+dataset,variant,model,acc_test,macro_f1,n_train,n_test,img_size,balanced_max
+aptos_2019,noaug,LogReg,0.658,0.47397463665060363,1996,500,96x96,1000
+aptos_2019,noaug,LinSVC,0.668,0.4777394668204485,1996,500,96x96,1000
+aptos_2019,noaug,RF,0.718,0.4879874714236615,1996,500,96x96,1000

@@ -1,0 +1,35 @@
+{
+  "mode": "machine-learning",
+  "datasets": [
+    "aptos_2019",
+    "eyePACS",
+    "idrid",
+    "messidor"
+  ],
+  "models": [
+    "RandomForest",
+    "LogisticRegression",
+    "LinearSVC",
+    "XGBoost"
+  ],
+  "n_features": 109,
+  "train_size": 4250,
+  "val_size": 750,
+  "n_classes": 5,
+  "balance_max": 1000,
+  "seed": 42,
+  "class_distribution_train": {
+    "0": 850,
+    "1": 850,
+    "2": 850,
+    "3": 850,
+    "4": 850
+  },
+  "class_distribution_val": {
+    "0": 150,
+    "1": 150,
+    "2": 150,
+    "3": 150,
+    "4": 150
+  }
+}

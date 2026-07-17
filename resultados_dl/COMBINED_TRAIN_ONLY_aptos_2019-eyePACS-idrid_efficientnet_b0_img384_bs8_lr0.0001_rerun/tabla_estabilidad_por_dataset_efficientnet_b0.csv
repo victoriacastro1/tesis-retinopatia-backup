@@ -1,0 +1,4 @@
+Modelo,Dataset,N validaci?n,Accuracy,F1 macro,Recall clase 3,Recall clase 4,QWK
+EfficientNet-B0,aptos_2019,105,0.571,0.558,0.471,0.816,0.766
+EfficientNet-B0,eyePACS,614,0.539,0.532,0.556,0.677,0.767
+EfficientNet-B0,idrid,25,0.72,0.468,0.75,0.833,0.869

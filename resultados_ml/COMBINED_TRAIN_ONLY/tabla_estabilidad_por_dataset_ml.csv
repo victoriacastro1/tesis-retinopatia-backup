@@ -1,0 +1,13 @@
+Modelo,Dataset,N validación,Accuracy,F1 macro,Recall clase 3,Recall clase 4,QWK
+RandomForest,aptos_2019,105,0.895,0.913,0.882,0.921,0.88
+RandomForest,eyePACS,614,0.65,0.651,0.855,0.909,0.642
+RandomForest,idrid,25,0.72,0.512,1.0,0.75,0.241
+LogisticRegression,aptos_2019,105,0.314,0.187,0.353,0.632,-0.029
+LogisticRegression,eyePACS,614,0.298,0.291,0.331,0.273,0.185
+LogisticRegression,idrid,25,0.2,0.113,0.25,0.25,-0.348
+LinearSVC,aptos_2019,105,0.305,0.165,0.353,0.658,-0.053
+LinearSVC,eyePACS,614,0.295,0.285,0.347,0.273,0.16
+LinearSVC,idrid,25,0.2,0.092,0.25,0.25,0.077
+XGBoost,aptos_2019,105,0.895,0.912,0.882,0.947,0.894
+XGBoost,eyePACS,614,0.643,0.643,0.839,0.929,0.668
+XGBoost,idrid,25,0.68,0.492,1.0,0.667,0.051

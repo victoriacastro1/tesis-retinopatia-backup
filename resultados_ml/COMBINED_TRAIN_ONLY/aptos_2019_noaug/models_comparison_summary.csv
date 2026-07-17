@@ -1,0 +1,5 @@
+Model,Accuracy,F1-Macro,F1-Micro,IoU-Macro,AUC-Macro,AUC-Micro,Train-Time (s)
+LinearSVC,,,,0.2726018032009566,,,
+LogisticRegression,,,,0.18308499122476746,,,
+RandomForest,,,,0.4016962016962016,,,
+XGBoost,,,,0.40723392633234423,,,
