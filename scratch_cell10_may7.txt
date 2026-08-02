@@ -1,0 +1,58 @@
+# ----------------------------
+# CONFIG
+# ----------------------------
+DATA_ROOT   = Path(r"C:\Users\Victoria\Desktop\data\datos_raw")  # <- ajusta si cambiaste
+DATASETS    = ["aptos_2019", "eyePACS", "idrid", "messidor"]     # usa los que tengas
+ARCH        = "efficientnet_b0"                           # "resnet34"|"efficientnet_b0"|"mobilenet_v3_large"|"inception_v3"
+
+# ↑ Para probar "más resolución" como sugirió tu asesor:
+IMG_SIZE    = 384   # prueba 384 o 448 (ojo: sube el uso de VRAM)
+
+N_CLASSES   = 5
+
+BATCH_BASE  = 16             # si falta VRAM con IMG_SIZE grande, baja a 8 o 4
+BATCH       = max(1, BATCH_BASE // 2)
+EPOCHS      = 25
+LR          = 1e-4
+WD          = 5e-2
+SEED        = 42
+NUM_WORKERS = 0
+PIN_MEMORY  = True
+
+# --------- Split por dataset (generalización)
+# None  -> split interno estratificado (como antes)
+# "messidor" / "eyePACS" / "aptos_2019" / "idrid" -> train con 3 BD y val con 1 BD
+HOLDOUT_DATASET = None
+
+VAL_SIZE    = 0.15                  # proporción de validación desde train (solo si HOLDOUT_DATASET=None)
+USE_CLASS_WEIGHTS     = True
+EARLY_STOP_PATIENCE   = 5
+BALANCE_MAX_PER_CLASS = 1000        # None = sin tope; recomendable 500-1000 para que eyePACS no domine
+
+# --------- Ordinalidad (clases 0-4 con "gradualidad")
+# "ce"       -> CrossEntropy normal
+# "soft_ce"  -> CE con targets "suaves" (penaliza menos si te equivocas por 1 clase)
+LOSS_TYPE = "soft_ce"
+SOFT_CE_TAU = 1.0   # más alto = más suave (0.7–1.5 suele ir bien)
+
+# --------- MixUp / CutMix (opcional)
+USE_MIXUP  = True
+MIXUP_ALPHA  = 0.2    # 0.2–0.4 suele ser estable
+CUTMIX_ALPHA = 0.0    # si quieres CutMix, pon 0.2 y USE_MIXUP=True
+
+# ====== RUTA DE SALIDA PARA TUS RESULTADOS ======
+BASE_OUT = Path(r"C:\Users\Victoria\Desktop\data\datos_raw\resultados_dl")
+
+RUN_TAG  = f"{ARCH}_img{IMG_SIZE}_bs{BATCH}_lr{LR}_rerun".replace("/", "-")
+OUTDIR   = BASE_OUT / f"COMBINED_TRAIN_ONLY_{'-'.join(DATASETS)}_{RUN_TAG}"
+OUTDIR.mkdir(parents=True, exist_ok=True)
+
+torch.backends.cudnn.benchmark = True
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+def set_seed(s=SEED):
+    random.seed(s); np.random.seed(s); torch.manual_seed(s); torch.cuda.manual_seed_all(s)
+set_seed(SEED)
+print("Device:", DEVICE)
+print("OUTDIR:", OUTDIR)
